@@ -7,27 +7,51 @@ class ExtendedNavBar extends Component {
     
         <div className="bg-light p-4">
             <nav className="navbar navbar-expand-lg navbar-light bg-light">
-                <a className="navbar-brand" href="index.html">DASHBOARD</a>
-                
-                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="true" aria-label="Toggle navigation">
-                    <span className="navbar-toggler-icon"></span>
-                </button>
 
-                <div className="navbar-nav">
-                    <a className="nav-item nav-link" href="todaysTasks.html">Todays Tasks <span class="sr-only">(current)</span></a>
-                    <a className="nav-item nav-link" href="allTasks.html">All Tasks</a>
-                    <a className="nav-item nav-link" href="completedTasks.html">Compeleted Tasks</a>
-                    <a className="nav-item nav-link" href="addTask.html">Add Task</a>
-                </div>
-                    
-        
-                <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
-                </form>
+            <div className="row w-100">
+            
+            <div className="col-3">
+                <div class="card text-center ">
+                    <div class="card-header" styles="font-size: 0.75rem">Tasks Remaining</div>
+                    <div class="card-body">                                    
+                        <h5 class="card-title" styles="font-size: 1.7rem;">7</h5>                                                                         
+                    </div>
+                </div> 
+            </div>
+
+            <div className="col-3">
+                <div class="card text-center ">
+                    <div class="card-header" styles="font-size: 0.75rem">Todays Tasks</div>
+                    <div class="card-body">                                    
+                        <h5 class="card-title" styles="font-size: 1.7rem;">7</h5>                                                                         
+                    </div>
+                </div> 
+            </div>
+
+            <div className="col-3">
+                 <div class="card text-center ">
+                    <div class="card-header" styles="font-size: 0.75rem">High Priority</div>
+                    <div class="card-body">                                    
+                        <h5 class="card-title" styles="font-size: 1.7rem;">7</h5>                                                                         
+                    </div>
+                </div>  
+            </div>  
+
+            <div className="col-3">
+                 <div class="card text-center ">
+                    <div class="card-header" styles="font-size: 0.75rem">Deadlines Missed</div>
+                    <div class="card-body">                                    
+                        <h5 class="card-title" styles="font-size: 1.7rem;">7</h5>                                                                         
+                    </div>
+                </div>  
+            </div> 
+
+                   
+            </div>    
             </nav>
           
         </div>
+        
     );
   }
 }
