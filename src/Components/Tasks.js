@@ -34,10 +34,10 @@ class Tasks extends Component {
           </div>
           <div className="row">
             <div className="col-6">
-              <a href="#" className="btn btn-outline-success btn-sm btn-block mt-2">Check</a>
+              <a href="#" className="btn btn-success btn-sm btn-block mt-2">Check</a>
             </div>
             <div className="col-6">
-              <a href="#" className="btn btn-outline-danger btn-sm btn-block mt-2">Remove</a>
+              <a href="#" className="btn btn-danger btn-sm btn-block mt-2">Remove</a>
             </div>
           </div>    
         </div>

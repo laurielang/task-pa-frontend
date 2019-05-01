@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import Header from './Components/Header';
-import ExtendedNavBar from './Components/ExtendedNavBar';
+import Dashboard from './Components/Dashboard';
 // import TaskTitle from './Components/AddItem/TaskTitle';
 // import AddPeople from './Components/AddItem/AddPeople';
 // import TaskDate from './Components/AddItem/TaskDate';
@@ -17,6 +17,18 @@ import Tasks from './Components/Tasks';
 
 class App extends Component {
 
+  state = {
+    tasks: [
+      {TaskTitle: "Feed the dog", Date: "21-05-19",Category:"", Priority:"", TaskDetails:"", completed: true},
+
+      {TaskTitle: "Tidy", Date: "21-05-19", Category:"", Priority:"", TaskDetails:"", completed: false},
+
+      {TaskTitle: "Wash up", Date: "21-05-19", Category:"", Priority:"", TaskDetails:"", completed: true},
+
+      {TaskTitle: "Practice JS", Date: "21-05-19", Category:"", Priority:"", TaskDetails:"", completed: true},
+    ],
+  }
+
   render() {
     return (
 
@@ -25,7 +37,7 @@ class App extends Component {
       <Header/>
 
       <div className="pos-f-t">        
-        <ExtendedNavBar/>              
+        <Dashboard totalCount={this.state.tasks.length} />              
       </div>
 
 <div className="container">
