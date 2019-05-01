@@ -23,7 +23,7 @@ class Dashboard extends Component {
                 <div class="card text-center ">
                     <div class="card-header bg-success text-white" styles="font-size: 0.75rem">Todays Tasks</div>
                     <div class="card-body">                                    
-                        <h5 class="card-title" styles="font-size: 1.7rem;">7</h5>                                                                         
+                        <h5 class="card-title" styles="font-size: 1.7rem;">{this.props.todaysTaskCounter}</h5>                                                                         
                     </div>
                 </div> 
             </div>

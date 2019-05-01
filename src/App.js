@@ -19,7 +19,7 @@ class App extends Component {
 
   state = {
     tasks: [
-      {TaskTitle: "Feed the dog", Date: "21-05-19",Category:"", Priority:"", TaskDetails:"", completed: true},
+      {TaskTitle: "Feed the dog", Date: "01-05-2019",Category:"", Priority:"", TaskDetails:"", completed: true},
 
       {TaskTitle: "Tidy", Date: "21-05-19", Category:"", Priority:"", TaskDetails:"", completed: false},
 
@@ -29,6 +29,28 @@ class App extends Component {
     ],
   }
 
+
+  todaysTasksCounter = () => {
+  const date = new Date().getDate(); 
+  const month = new Date().getMonth(); 
+  const year = new Date().getFullYear();
+    
+  const todaysDate = date +-+ month +-+ year; 
+  
+  let todaysTask = 0
+
+  this.state.tasks.ForEach( () => {
+    if (this.state.tasks.Date === todaysDate)
+    {todaysTask += 1}
+  } )  
+  return todaysTask
+
+  }
+  
+   
+
+
+
   render() {
     return (
 
@@ -37,7 +59,7 @@ class App extends Component {
       <Header/>
 
       <div className="pos-f-t">        
-        <Dashboard totalCount={this.state.tasks.length} />              
+        <Dashboard totalCount={this.state.tasks.length} tasksToday={this.todaysTasksCounter} />              
       </div>
 
 <div className="container">
