@@ -1,6 +1,9 @@
 import React, { Component } from "react";
+// import task from './Components/Task';
 
-class Tasks extends Component {
+
+
+class Task extends Component {
   render() {
     return (
       <div class="col-4">
@@ -9,19 +12,19 @@ class Tasks extends Component {
         <div className="card-body w-100">
           <div className="row">
             <div className="col-6">
-              <h7 className="card-title text">Task title</h7>
+              <h7 className="card-title text">{this.props.task.TaskTitle}</h7>
             </div>
             <div className="col-6 text-right"> 
-              <h7 className="card-title text-right">Date</h7> 
+              <h7 className="card-title text-right">{this.props.task.Date}</h7> 
             </div>
            </div> 
     
            <div className="row">
             <div className="col-6">
-              <h7 className="card-subtitle mb-1 text-muted">Priority</h7>
+              <h7 className="card-subtitle mb-1 text-muted">{this.props.task.Priority}</h7>
             </div>
             <div className="col-6 text-right"> 
-              <h7 className="card-subtitle mb-1 text-muted">Category</h7> 
+              <h7 className="card-subtitle mb-1 text-muted">{this.props.task.Category}</h7> 
             </div>
            </div>  
            </div>                                
@@ -30,7 +33,7 @@ class Tasks extends Component {
     
         <div className="card-footer" styles="width:18rem">    
           <div className=" text-center card-body">
-            Task Details
+            {this.props.task.TaskDetails}
           </div>
           <div className="row">
             <div className="col-6">
@@ -48,4 +51,4 @@ class Tasks extends Component {
   }
 }
 
-export default Tasks;
+export default Task;
