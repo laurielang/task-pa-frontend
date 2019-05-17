@@ -81,6 +81,20 @@ class App extends Component {
   console.log(filteredTasks)
   }
 
+  checkOffTask = taskId => {
+    const filteredTasks = this.state.tasks.filter(item => {
+      if (item.taskId === taskId){
+        return false;
+      } else{
+        return true;
+      }
+    })
+    this.setState({
+      tasks: filteredTasks
+    })
+    console.log(filteredTasks)
+  }
+
   completeTask = taskId => {
     const updatedTasks = this.state.tasks.map(item => {
       if (item.taskId === taskId) {
@@ -125,7 +139,7 @@ class App extends Component {
           <div className="row w-100">
 
             {this.state.tasks.map((item, index) => {
-                return <Task task={item} key={index} taskId={item.taskId} deleteTask={this.deleteTask} completeTask={this.completeTask}/>
+                return <Task task={item} key={index} taskId={item.taskId} deleteTask={this.deleteTask} completeTask={this.completeTask} checkOffTask={this.checkOffTask}/>
             })}
 
            
