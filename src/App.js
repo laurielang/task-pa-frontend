@@ -23,9 +23,9 @@ class App extends Component {
 
       { TaskTitle: "Tidy", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false },
 
-      { TaskTitle: "Wash up", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: true },
+      { TaskTitle: "Wash up", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false },
 
-      { TaskTitle: "Practice JS", Date: "3-5-2019", Category: "", Priority: "", TaskDetails: "", completed: true },
+      { TaskTitle: "Practice JS", Date: "3-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false },
     ],
     todaysTaskCount: 0
   }

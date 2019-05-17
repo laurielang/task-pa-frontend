@@ -5,8 +5,8 @@ class AddTask extends Component {
   state = {
     TaskTitle: '',
     Date: '',
-    Priority: '',
-    Category: '',
+    Priority: 'Set Priority...',
+    Category: 'Choose Category...',
     TaskDetails:'',
 
   }
@@ -32,7 +32,7 @@ class AddTask extends Component {
     })
   }
 
-  handleCategoryChange = (event) => {
+  handleCategoryChange = (event) => { console.log(event)
     this.setState({
       Category: event.target.value
 
@@ -66,6 +66,10 @@ class AddTask extends Component {
 
  
   render() {
+
+    const catergoryOptions = ["Choose Category...", "Personal", "Work", "Family", "Business"]
+    const priorityOptions = ["Set Priority...", "Critical", "Important", "Normal", "Low"]
+
     return (
         
 <div className="container">
@@ -82,14 +86,12 @@ class AddTask extends Component {
 
         <div className="input-group mb-3">
             <div className="input-group-prepend">
-                <button className="btn btn-outline-secondary" type="button" onChange={this.handleCatergoryChange}>Category</button>
+                <button className="btn btn-outline-secondary" type="button" >Category</button>
             </div>
-            <select className="custom-select" id="Category">
-                <option selected>Choose Category...</option>
-                <option value="1">Personal</option>
-                <option value="2">Work</option>
-                <option value="3">Family</option> 
-                <option value="3">Bills</option>                
+            <select className="custom-select" id="Category" onChange={this.handleCatergoryChange}>
+            {catergoryOptions.map((categoryOption, i) => {
+              return <option value={i} key={i}>{categoryOption}</option>
+            } )}                          
             </select>
         </div>
 
@@ -97,12 +99,10 @@ class AddTask extends Component {
             <div className="input-group-prepend">
                 <button className="btn btn-outline-secondary" type="button"onChange={this.handlePriorityChange}>Priority</button>
             </div>
-            <select className="custom-select" id="Priority">
-                <option select>Set Priority...</option>
-                <option value="1">Critical</option>
-                <option value="2">Important</option>
-                <option value="3">Normal</option>
-                <option value="4">Low</option>
+            <select className="custom-select" id="Priority">      
+            {priorityOptions.map((priorityOption, i) => {
+              return <option value={i} key={i}>{priorityOption}</option>
+            })}
             </select>
         </div>
 
