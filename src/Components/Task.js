@@ -11,6 +11,10 @@ handleDeleteClick = () => { console.log(this.props.taskId)
   this.props.deleteTask(this.props.taskId)
 } 
 
+handleCompleteClick = () => {console.log(this.props.taskId)
+  this.props.completeTask(this.props.taskId)
+}
+
   render() {
     return (
       <div className="col-4">
@@ -44,7 +48,7 @@ handleDeleteClick = () => { console.log(this.props.taskId)
           </div>
           <div className="row">
             <div className="col-6">
-            {this.props.task.completed ? <button className="btn btn-primary btn-sm btn-block"> <span className="oi" data-glyph="check"></span>Check Off</button> : <button type="button" className="btn btn-success btn-sm btn-block mt-2">Complete</button>}
+            {this.props.task.completed ? <button className="btn btn-primary btn-sm btn-block"> <span className="oi" data-glyph="check"></span>Check Off</button> : <button type="button" className="btn btn-success btn-sm btn-block mt-2" onClick={this.handleCompleteClick}>Complete</button>}
             </div>
             <div className="col-6">
               {this.props.task.completed ? null : <button type="button" className="btn btn-danger btn-sm btn-block mt-2" onClick={this.handleDeleteClick}>Remove</button>}
