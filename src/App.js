@@ -13,19 +13,20 @@ import Dashboard from './Components/Dashboard';
 // import CreateTaskButton from './Components/AddItem/CreateTaskButton';
 import AddTask from './Components/AddTask';
 import Task from './Components/Task';
+import UUID from 'uuid/v4'
 
 
 class App extends Component {
 
   state = {
     tasks: [
-      { TaskTitle: "Feed the dog", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: true },
+      { TaskTitle: "Feed the dog", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: true, taskId: UUID()  },
 
-      { TaskTitle: "Tidy", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false },
+      { TaskTitle: "Tidy", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
 
-      { TaskTitle: "Wash up", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false },
+      { TaskTitle: "Wash up", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
 
-      { TaskTitle: "Practice JS", Date: "3-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false },
+      { TaskTitle: "Practice JS", Date: "3-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
     ],
     todaysTaskCount: 0
   }
@@ -66,7 +67,19 @@ class App extends Component {
     });
   }
 
-
+  deleteTask = taskId => {
+  const filteredTasks = this.state.tasks.filter(item => {
+    if (item.taskId === taskId){
+      return false;
+    } else{
+      return true;
+    }
+  })
+  this.setState({
+    tasks: filteredTasks
+  })
+  console.log(filteredTasks)
+  }
 
   render() {
     return (
@@ -98,7 +111,7 @@ class App extends Component {
           <div className="row w-100">
 
             {this.state.tasks.map((item, index) => {
-              return <Task task={item} key={index} />
+              return <Task task={item} key={index} taskId={item.taskId} deleteTask={this.deleteTask}/>
             })}
 
            

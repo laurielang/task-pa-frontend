@@ -1,9 +1,16 @@
 import React, { Component } from "react";
+
 // import task from './Components/Task';
 
 
 
+
 class Task extends Component {
+
+handleDeleteClick = () => { console.log(this.props.taskId)
+  this.props.deleteTask(this.props.taskId)
+} 
+
   render() {
     return (
       <div className="col-4">
@@ -40,7 +47,7 @@ class Task extends Component {
             {this.props.task.completed ? <button className="btn btn-primary btn-sm btn-block"> <span className="oi" data-glyph="check"></span>Check Off</button> : <button type="button" className="btn btn-success btn-sm btn-block mt-2">Complete</button>}
             </div>
             <div className="col-6">
-              {this.props.task.completed ? null : <button type="button" className="btn btn-danger btn-sm btn-block mt-2">Remove</button>}
+              {this.props.task.completed ? null : <button type="button" className="btn btn-danger btn-sm btn-block mt-2" onClick={this.handleDeleteClick}>Remove</button>}
             </div>
           </div>    
         </div>

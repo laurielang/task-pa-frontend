@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import UUID from 'uuid/v4'
 
 class AddTask extends Component {
  
@@ -53,7 +54,8 @@ class AddTask extends Component {
       TaskDetails: this.state.TaskDetails,
       Date: this.state.Date,
       Category: this.state.Category,
-      Priority: this.state.Priority
+      Priority: this.state.Priority,
+      taskId: UUID()
 
     };
     
