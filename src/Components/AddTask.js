@@ -25,7 +25,7 @@ class AddTask extends Component {
     })
   }
 
-  handlePriorityChange = (event) => {
+  handlePriorityChange = (event) => { console.log(event)
     this.setState({
       Priority: event.target.value
 
@@ -88,20 +88,20 @@ class AddTask extends Component {
             <div className="input-group-prepend">
                 <button className="btn btn-outline-secondary" type="button" >Category</button>
             </div>
-            <select className="custom-select" id="Category" onChange={this.handleCatergoryChange}>
+            <select className="custom-select" id="Category" onChange={this.handleCategoryChange} value={this.state.Category}>
             {catergoryOptions.map((categoryOption, i) => {
-              return <option value={i} key={i}>{categoryOption}</option>
+              return <option value={categoryOption} key={i} >{categoryOption}</option>
             } )}                          
             </select>
         </div>
 
         <div className="input-group mb-3">
             <div className="input-group-prepend">
-                <button className="btn btn-outline-secondary" type="button"onChange={this.handlePriorityChange}>Priority</button>
+                <button className="btn btn-outline-secondary" type="button">Priority</button>
             </div>
-            <select className="custom-select" id="Priority">      
+            <select className="custom-select" id="Priority" onChange={this.handlePriorityChange} value={this.state.Priority}>      
             {priorityOptions.map((priorityOption, i) => {
-              return <option value={i} key={i}>{priorityOption}</option>
+              return <option value={priorityOption} key={i}>{priorityOption}</option>
             })}
             </select>
         </div>
