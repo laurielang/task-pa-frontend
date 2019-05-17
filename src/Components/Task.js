@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-
+import moment from "moment"
 // import task from './Components/Task';
 
 
@@ -7,15 +7,15 @@ import React, { Component } from "react";
 
 class Task extends Component {
 
-handleDeleteClick = () => { console.log(this.props.taskId)
+handleDeleteClick = () => { 
   this.props.deleteTask(this.props.taskId)
 } 
 
-handleCompleteClick = () => {console.log(this.props.taskId)
+handleCompleteClick = () => {
   this.props.completeTask(this.props.taskId)
 }
 
-handleCheckOffClick = () => {console.log(this.props.taskId)
+handleCheckOffClick = () => {
   this.props.checkOffTask(this.props.taskId)
 }
 
@@ -30,7 +30,7 @@ handleCheckOffClick = () => {console.log(this.props.taskId)
               <h6 className="card-title text">{this.props.task.TaskTitle}</h6>
             </div>
             <div className="col-6 text-right"> 
-              <h6 className="card-title text-right">{this.props.task.Date}</h6> 
+              <h6 className="card-title text-right">{ moment(this.props.task.Date,"YYYY-MM-DD").format("Do MMM YYYY")}</h6> 
             </div>
            </div> 
     

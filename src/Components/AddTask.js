@@ -26,14 +26,14 @@ class AddTask extends Component {
     })
   }
 
-  handlePriorityChange = (event) => { console.log(event)
+  handlePriorityChange = (event) => { 
     this.setState({
       Priority: event.target.value
 
     })
   }
 
-  handleCategoryChange = (event) => { console.log(event)
+  handleCategoryChange = (event) => { 
     this.setState({
       Category: event.target.value
 
@@ -56,15 +56,16 @@ class AddTask extends Component {
       Category: this.state.Category,
       Priority: this.state.Priority,
       taskId: UUID()
-
     };
+    
+    if (newTask.TaskTitle.length > 0 && newTask.TaskDetails.length > 0 && newTask.Category !== "Choose Category..." && newTask.Priority !== "Set Priority..." && newTask.Date !== ""){ 
     
       this.props.addTask(newTask);
       this.setState({
         text: ''
       });
     
-  }
+  }}
 
  
   render() {
@@ -83,7 +84,7 @@ class AddTask extends Component {
         </div>
 
         <div className="form-group">          
-          <input type="date" className="form-control" id="Date" aria-describedby="emailHelp" onChange={this.handleDateChange} />          
+          <input type="date" className="form-control" id="from-Datepicker" aria-describedby="emailHelp" onChange={this.handleDateChange} />          
         </div>
 
         <div className="input-group mb-3">

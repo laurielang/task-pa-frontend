@@ -20,13 +20,13 @@ class App extends Component {
 
   state = {
     tasks: [
-      { TaskTitle: "Feed the dog", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: true, taskId: UUID()  },
+      { TaskTitle: "Feed the dog", Date: "2019-05-25", Category: "", Priority: "", TaskDetails: "", completed: true, taskId: UUID()  },
 
-      { TaskTitle: "Tidy", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
+      { TaskTitle: "Tidy", Date: "2019-05-17", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
 
-      { TaskTitle: "Wash up", Date: "2-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
+      { TaskTitle: "Wash up", Date: "2019-05-07", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
 
-      { TaskTitle: "Practice JS", Date: "3-5-2019", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
+      { TaskTitle: "Practice JS", Date: "2019-05-01", Category: "", Priority: "", TaskDetails: "", completed: false, taskId: UUID() },
     ],
     todaysTaskCount: 0
   }
@@ -78,7 +78,7 @@ class App extends Component {
   this.setState({
     tasks: filteredTasks
   })
-  console.log(filteredTasks)
+ 
   }
 
   checkOffTask = taskId => {
@@ -92,7 +92,7 @@ class App extends Component {
     this.setState({
       tasks: filteredTasks
     })
-    console.log(filteredTasks)
+    
   }
 
   completeTask = taskId => {
